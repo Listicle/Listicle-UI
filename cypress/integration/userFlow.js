@@ -4,6 +4,7 @@ describe('User flow Listicle app', () => {
   });
 
   it('Should greet the user with a welcome message', () => {
-
+    cy.get('.flex > h1')
+    .should('contain', 'Welcome')
   })
 })
