@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<main class="flex flex-col space-y-20 h-screen w-4/5">
+  <h1>Welcome to Listicle</h1>
+  <h3>We can help you boost your productivity</h3>
+  <h4>To get started open an existen project on your dashboard</h4>
+  <h3>Or create a new one by pressing the + button</h3>
+</main>
+
