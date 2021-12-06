@@ -5,7 +5,7 @@ import Dashboard from '../components/Dashboard.svelte';
 </script>
 
 
-<main class="flex flex-row h-screen w-screen">
+<main class="flex flex-row h-screen w-screen max-w-screen-xl">
 	<Dashboard />
 	<slot />
 </main>
