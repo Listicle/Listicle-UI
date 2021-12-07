@@ -1,9 +1,9 @@
 <script>
-
+  import listicleLogo from '../img/listicle.png';
 </script>
 
 <div class="min-h-screen w-1/5">
-  <h1>Listicle</h1>
+  <img src={listicleLogo} alt="listicle-logo">
   <div>
     <div>
       <h3>Projects</h3>
