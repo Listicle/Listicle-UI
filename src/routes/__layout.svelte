@@ -5,7 +5,7 @@
 </script>
 
 
-<main class="flex flex-row h-screen w-screen max-w-screen-xl space">
+<main class="flex flex-row h-screen w-screen max-w-screen-xl space ">
 	<Dashboard />
 	<slot />
 </main>
