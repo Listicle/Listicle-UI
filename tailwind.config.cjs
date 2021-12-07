@@ -3,7 +3,12 @@ const config = {
 	purge: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		extend: {
+			backgroundImage: {
+				'space': "url('/img/space.png')",
+				'space1': "url('/img/space1.png')"
+			}
+		}
 	},
 
 	plugins: []
