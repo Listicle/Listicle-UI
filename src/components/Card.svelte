@@ -1,10 +1,9 @@
 <script>
-  import { capstoneProject } from '../store/mockedData';
   export let activity;
-  export let state;
+  export let cardState;
   let activityName = activity.title;
   let isTaskOn = false;
-  let tasks = capstoneProject || [];
+  let tasks = [];
 
   const createTask = () => {
     let newTask = {
@@ -16,20 +15,20 @@
       let updatedProject = currentProject.activities.tasks.push(newTask)
       return updatedProject;
     })
-  }
+  };
 
   const handleSubmit = () => {
     let newActivity = {
         id: Math.random(),
         title: activityName,
-        status: state,
+        status: cardState,
         tasks: []
       };
       capstoneProject.update(currentProject => {
         let updatedProject = currentProject.activities.push(activityName)
         return updatedProject;
       })
-  }
+  };
 </script>
 
 <div>

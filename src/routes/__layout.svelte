@@ -1,6 +1,5 @@
 <script>
 	import Dashboard from '../components/Dashboard.svelte';
-
 	import '../app.css';
 </script>
 
@@ -10,6 +9,3 @@
 	<slot />
 </main>
 
-<style>
-	
-</style>
