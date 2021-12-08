@@ -1,10 +1,10 @@
 import { writable } from 'svelte/store';
 
-const capstoneProject = writable([
+const capstoneProject = writable(
   {
     id: '2',
     projectName: 'Capstone Project',
-    activitiesCount: 2,
+    activitiesCount: 9,
     activities: [
       {
         id: '3',
@@ -78,7 +78,7 @@ const capstoneProject = writable([
     ]
 
   }
-]);
+);
 
 const projectList = writable([
   {
