@@ -5,8 +5,8 @@ const config = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'space': "url('/img/space.png')",
-				'space1': "url('/img/space1.png')"
+				'space': "url('/src/img/space.jpeg')",
+				'space1': "url('/src/img/space1.jpeg')"
 			}
 		}
 	},
