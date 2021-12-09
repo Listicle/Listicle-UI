@@ -28,17 +28,17 @@ const activities = writable([
     taskCount: 3,
     tasks: [
       {
-        id: '6',
+        id: Math.random(),
         taskName: 'Create user stories',
         completed: false
       },
       {
-        id: '7',
+        id: Math.random(),
         taskName: 'Create wire-frame',
         completed: false
       },
       {
-        id: '6',
+        id: Math.random(),
         taskName: 'Create architecture diagram',
         completed: false
       }
@@ -51,17 +51,17 @@ const activities = writable([
     taskCount: 3,
     tasks: [
       {
-        id: '14',
+        id: Math.random(),
         taskName: 'Complete svelte tutorial',
         completed: false
       },
       {
-        id: '56',
+        id: Math.random(),
         taskName: 'Complete sapper tutorial',
         completed: false
       },
       {
-        id: '43',
+        id: Math.random(),
         taskName: 'Complete tailwind tutorial',
         completed: false
       }
@@ -74,22 +74,35 @@ const activities = writable([
     taskCount: 3,
     tasks: [
       {
-        id: '21',
+        id: Math.random(),
         taskName: 'Create UI template',
         completed: false
       },
       {
-        id: '45',
+        id: Math.random(),
         taskName: 'Mock data and build around it',
         completed: false
       },
       {
-        id: '92',
+        id: Math.random(),
         taskName: 'Integrate apollo calls',
         completed: false
       }
     ]
   }
-])
+]);
 
-export { projectList, activities };
+const tasks = writable([
+  {
+    id: Math.random(),
+    taskName: 'random stuff',
+    completed: false
+  },
+  {
+    id: Math.random(),
+    taskName: 'else',
+    completed: false
+  }
+]);
+
+export { projectList, activities, tasks };

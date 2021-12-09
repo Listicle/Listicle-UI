@@ -7,22 +7,22 @@
 
   const createInput = () => {
     isInputOn = true;
-  }
+  };
 
   const handleSubmit = () => {
-    let newProject = { id: Math.random(), projectName: newProjectName }
+    let newProject = { id: Math.random(), projectName: newProjectName };
     projectList.update(currentProjects => {
-      return [newProject, ...currentProjects]
+      return [newProject, ...currentProjects];
     })
     newProjectName = '';
     isInputOn = false;
-  }
+  };
 
   const deleteProject = (id) => {
     projectList.update(currentProjects => {
-      return currentProjects.filter(project => project.id !== id)
-    })
-  }
+      return currentProjects.filter(project => project.id !== id);
+    });
+  };
 </script>
 
 <div class="min-h-screen w-1/5 backdrop-grayscale">
@@ -34,15 +34,15 @@
     </div>
     <div class="flex flex-col p-3 font-semibold backdrop-grayscale-0 ">
       {#if isInputOn}
-      <form on:submit|preventDefault={handleSubmit}>
-        <input type="text" placeholder="Type the name of your project..." bind:value={newProjectName}>
-      </form>
+        <form on:submit|preventDefault={handleSubmit}>
+          <input type="text" placeholder="Type the name of your project..." bind:value={newProjectName}>
+        </form>
       {/if}
       {#each $projectList as project (project.id)}
-      <div class="flex flex-row justify-between">
-        <a href="/project"><p>{project.projectName}</p></a>
-        <button on:click={() => deleteProject(project.id)}>🗑</button>
-      </div>
+        <div class="flex flex-row justify-between">
+          <a href="/project"><p>{project.projectName}</p></a>
+          <button on:click={() => deleteProject(project.id)}>🗑</button>
+        </div>
       {/each}
     </div>
   </div>
