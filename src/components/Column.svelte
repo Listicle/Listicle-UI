@@ -1,8 +1,8 @@
 <script>
   import Card from "./Card.svelte";
-  import { activities } from '../store/mockedData';
+  import { activities, tasks } from '../store/mockedData';
   export let state;
-  
+
   let isCardOn = false;
   let cardActivities;
   let missionTitle = '';
@@ -15,20 +15,26 @@
     status: state,
     taskCount: 0,
     tasks: []
-    }
+  };
     activities.update(currentMissions => {
-      return [...currentMissions, newMission]
+      return [...currentMissions, newMission];
     });
     console.log(missionsType);
     missionTitle = '';
-  }
+  };
+
+  const deleteMission = (id) => {
+    activities.update(currentMissions => {
+      return currentMissions.filter(mission => mission.id !== id);
+    });
+  };
 </script>
 
 <div class="w-1/4 p-4 m-4 rounded">
   <h1 class="text-center text-xl">{state}</h1>
   <div class="flex flex-row">
     <form on:submit|preventDefault={handleSubmit}>
-      <input type="text" placeholder="Add mission...+" bind:value={missionTitle}>
+      <input class="w-full" type="text" placeholder="Add mission...+" bind:value={missionTitle}>
     </form>
   </div>
   {#if isCardOn}
@@ -36,8 +42,11 @@
   {/if}
   {#if missionsType.length}
     {#each missionsType as activity (activity.id)}
-      <Card {activity} cardState={state} />
-    {/each }
+      <div>
+        <Card {activity} cardState={state} tasks={activity.tasks} />
+        <button on:click={() => deleteMission(activity.id)}>🗑</button>
+      </div>
+    {/each}
   {/if}
 </div>
 
