@@ -1,6 +1,6 @@
 <script>
   export let activity;
-  export let cardState;
+  // export let cardState;
   export let tasks;
   let newTaskList = [];
   let activityName = '';

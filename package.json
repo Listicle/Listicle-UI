@@ -9,7 +9,7 @@
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"cy:run": "cypress run",
-		"test": "start-server-and-test build http://localhost:3000 cy:run",
+		"test": "start-server-and-test dev http://localhost:3000 cy:run",
 		"build-css": "tailwindcss build src/app.css -o output/client/_app/assets/start-464e9d0a.css"
 	},
 	"devDependencies": {
