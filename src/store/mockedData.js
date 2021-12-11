@@ -105,4 +105,6 @@ const tasks = writable([
   }
 ]);
 
-export { projectList, activities, tasks };
+const flipDurationMs = 300;
+
+export { projectList, activities, tasks, flipDurationMs };

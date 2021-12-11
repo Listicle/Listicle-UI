@@ -1,83 +1,80 @@
-import { writable } from 'svelte/store';
+// import { writable } from 'svelte/store';
 
-const capstoneProject =  writable({
-    id: '2',
+const project =  {
+    id: Math.random(),
     projectName: 'Capstone Project',
     activitiesCount: 9,
     activities: [
       {
-        id: '3',
+        id: Math.random(),
         title: 'planning',
-        status: 'Future Missions',
+        status: 0,
         taskCount: 3,
         tasks: [
           {
-            id: '6',
+            id: Math.random(),
             taskName: 'Create user stories',
-            completed: false
+            completed: true
           },
           {
-            id: '7',
+            id: Math.random(),
             taskName: 'Create wire-frame',
             completed: false
           },
           {
-            id: '6',
+            id: Math.random(),
             taskName: 'Create architecture diagram',
             completed: false
           }
         ]
       },
       {
-        id: '5',
+        id: Math.random(),
         title: 'learning',
-        status: 'Current Missions',
+        status: 1,
         taskCount: 3,
         tasks: [
           {
-            id: '14',
+            id: Math.random(),
             taskName: 'Complete svelte tutorial',
             completed: false
           },
           {
-            id: '56',
+            id: Math.random(),
             taskName: 'Complete sapper tutorial',
             completed: false
           },
           {
-            id: '43',
+            id: Math.random(),
             taskName: 'Complete tailwind tutorial',
             completed: false
           }
         ]
       },
       {
-        id: '9',
+        id: Math.random(),
         title: 'executing',
-        status: 'Successful Missions',
+        status: 2,
         taskCount: 3,
         tasks: [
           {
-            id: '21',
+            id: Math.random(),
             taskName: 'Create UI template',
             completed: false
           },
           {
-            id: '45',
+            id: Math.random(),
             taskName: 'Mock data and build around it',
             completed: false
           },
           {
-            id: '92',
+            id: Math.random(),
             taskName: 'Integrate apollo calls',
             completed: false
           }
         ]
       }
     ]
-  });
+  };
 
-  // const activities = writable(capstoneProject.activities)
-
-// export { activities };
-// export { capstoneProject };
+export { project };

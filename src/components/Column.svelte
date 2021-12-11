@@ -1,50 +1,37 @@
 <script>
   import Card from "./Card.svelte";
-  import { activities, tasks } from '../store/mockedData';
+  export let missions;
   export let state;
 
-  let isCardOn = false;
-  let cardActivities;
+  let missionStatus;
   let missionTitle = '';
-  $:missionsType = $activities.filter(mission => mission.status === state);
+  $:filteredMissions = missions.filter(mission => mission.status === state)
 
-  const handleSubmit = () => {
-    const newMission = {
-    id: Math.random(),
-    title: missionTitle,
-    status: state,
-    taskCount: 0,
-    tasks: []
-  };
-    activities.update(currentMissions => {
-      return [...currentMissions, newMission];
-    });
-    console.log(missionsType);
-    missionTitle = '';
-  };
-
-  const deleteMission = (id) => {
-    activities.update(currentMissions => {
-      return currentMissions.filter(mission => mission.id !== id);
-    });
-  };
+  if(state === 0) {
+    missionStatus = 'Future Missions'
+  }else if(state === 1) {
+    missionStatus = 'Current Missions'
+  } else {
+    missionStatus = 'Completed Missions'
+  }
+  
 </script>
 
-<div class="w-1/4 p-4 m-4 rounded">
-  <h1 class="text-center text-xl">{state}</h1>
-  <div class="flex flex-row">
-    <form on:submit|preventDefault={handleSubmit}>
-      <input class="w-full" type="text" placeholder="Add mission...+" bind:value={missionTitle}>
+<div class="w-1/4 p-4 m-4 rounded" >
+  <h1 class="text-center text-xl">{missionStatus}</h1>
+  <div class="flex flex-row justify-center">
+    <form >
+      <input class="w-full text-center border-solid border-transparent 
+      focus:outline-none focus:shadow rounded" type="text" placeholder="add a mission" 
+      onfocus="this.placeholder=''" 
+      onblur="this.placeholder='add a mission'"
+      bind:value={missionTitle}>
     </form>
   </div>
-  {#if isCardOn}
-    <Card />
-  {/if}
-  {#if missionsType.length}
-    {#each missionsType as activity (activity.id)}
+  {#if filteredMissions.length}
+    {#each filteredMissions as mission (mission.id)}
       <div>
-        <Card {activity} cardState={state} tasks={activity.tasks} />
-        <button on:click={() => deleteMission(activity.id)}>🗑</button>
+        <Card {mission} cardState={state} tasks={mission.tasks} />
       </div>
     {/each}
   {/if}
