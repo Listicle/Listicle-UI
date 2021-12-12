@@ -1,7 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-node';
-import path from 'path'
-import houdini from 'houdini-preprocess'
+import path from 'path';
+import houdini from 'houdini-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -32,3 +32,4 @@ export default {
     }
   }
 }
+
