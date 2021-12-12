@@ -7,7 +7,7 @@
 </script>
 
 <div class="bg-gray-300 h-auto p-2 my-2 rounded">
-  <h3 class="capitalize text-center">{mission.title}</h3>
+  <h3 class="capitalize text-center font-semibold">{mission.title}</h3>
   <form class="w-auto">
     <input class="w-full text-center border-solid border-transparent 
     focus:outline-none focus:shadow rounded" 
@@ -22,7 +22,7 @@
         <button class={task.completed ? `${buttonStyle} bg-black` : buttonStyle} ></button>
         <p class={task.completed && 'line-through'}>{task.taskName}</p>
       </div>
-      <div>
+      <div class="text-transparent hover:text-black">
         <button>🗑</button>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <button class={mission.status === 0 && 'bg-white rounded p-0.5'}>Future</button>
       <button class={mission.status === 1 && 'bg-white rounded p-0.5'}>Current</button>
       <button class={mission.status === 2 && 'bg-white rounded p-0.5'}>Completed</button>
-      <button>🗑</button>
+      <button class="text-transparent hover:text-black">🗑</button>
     </div>
   {/if}
 </div>

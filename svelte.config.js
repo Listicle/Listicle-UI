@@ -1,7 +1,9 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-node';
-import path from 'path'
-import houdini from 'houdini-preprocess'
+import path from 'path';
+import houdini from 'houdini-preprocess';
+import { defineConfig } from 'vite'
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +13,6 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte'
 	},
-
 	preprocess: [
 		preprocess({
 			postcss: true
@@ -32,3 +33,4 @@ export default {
     }
   }
 }
+
