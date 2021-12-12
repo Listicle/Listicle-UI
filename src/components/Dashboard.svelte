@@ -1,8 +1,7 @@
 <script>
-  import { projectList } from '../store/mockedData.js';
+  // import { projectList } from '../store/mockedData.js';
   import listicleLogo from '../img/FullLogo_Transparent_NoBuffer.png';
-
-  let isInputOn = false;
+  export let projects;
   let newProjectName = '';
 
   const createInput = () => {
@@ -10,18 +9,11 @@
   };
 
   const handleSubmit = () => {
-    let newProject = { id: Math.random(), projectName: newProjectName };
-    projectList.update(currentProjects => {
-      return [newProject, ...currentProjects];
-    })
-    newProjectName = '';
-    isInputOn = false;
+    
   };
 
   const deleteProject = (id) => {
-    projectList.update(currentProjects => {
-      return currentProjects.filter(project => project.id !== id);
-    });
+   
   };
 </script>
 
@@ -39,9 +31,9 @@
       </form>
     </div>
     <div class="flex flex-col p-3 font-semibold backdrop-grayscale-0 ">
-      {#each $projectList as project (project.id)}
+      {#each projects as project (project.id)}
         <div class="flex flex-row justify-between">
-          <a href="/project"><p>{project.projectName}</p></a>
+          <a href={`/project/${project.projectName}`}><p>{project.projectName}</p></a>
           <button class="text-transparent hover:text-black" on:click={() => deleteProject(project.id)}>🗑</button>
         </div>
       {/each}
