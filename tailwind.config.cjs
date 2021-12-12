@@ -5,8 +5,9 @@ const config = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'space': "url('/src/img/space.jpeg')",
-				'space1': "url('/src/img/space1.jpeg')"
+				'image': "url('https://wallpapercave.com/wp/wp8667734.jpg')",
+				'image2': "url('https://wallpapercave.com/wp/wp8312493.png')",
+				'image3': "url('https://cdn.wallpapersafari.com/74/29/BOPzUX.jpg')",
 			}
 		}
 	},

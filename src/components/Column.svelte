@@ -17,8 +17,8 @@
   
 </script>
 
-<div class="w-1/4 p-4 m-4 rounded" >
-  <h1 class="text-center text-xl">{missionStatus}</h1>
+<div class="w-72 p-4 m-4 rounded" >
+  <h1 class="text-center text-xl font-semibold">{missionStatus}</h1>
   <div class="flex flex-row justify-center">
     <form >
       <input class="w-full text-center border-solid border-transparent 

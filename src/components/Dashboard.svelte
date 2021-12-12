@@ -1,6 +1,6 @@
 <script>
   import { projectList } from '../store/mockedData.js';
-  import listicleLogo from '../img/listicle3.png';
+  import listicleLogo from '../img/FullLogo_Transparent.png';
 
   let isInputOn = false;
   let newProjectName = '';
@@ -25,23 +25,24 @@
   };
 </script>
 
-<div class="min-h-screen w-1/5 backdrop-grayscale">
+<div class="flex flex-col min-h-screen w-64 backdrop-grayscale">
   <img src={listicleLogo} alt="listicle-logo" class="w-80 py-10">
   <div>
-    <div class="flex flex-row space-x-14 items-end">
+    <div class="block">
       <h3 class="text-3xl">Projects</h3>
-      <p class="text-3xl" on:click={createInput}> +</p>
+      <form >
+        <input class="w-full text-center border-solid border-transparent 
+        focus:outline-none focus:shadow rounded" type="text" placeholder="add a project" 
+        onfocus="this.placeholder=''" 
+        onblur="this.placeholder='add a project'"
+        bind:value={newProjectName}>
+      </form>
     </div>
     <div class="flex flex-col p-3 font-semibold backdrop-grayscale-0 ">
-      {#if isInputOn}
-        <form on:submit|preventDefault={handleSubmit}>
-          <input type="text" placeholder="Type the name of your project..." bind:value={newProjectName}>
-        </form>
-      {/if}
       {#each $projectList as project (project.id)}
         <div class="flex flex-row justify-between">
           <a href="/project"><p>{project.projectName}</p></a>
-          <button on:click={() => deleteProject(project.id)}>🗑</button>
+          <button class="text-transparent hover:text-black" on:click={() => deleteProject(project.id)}>🗑</button>
         </div>
       {/each}
     </div>
