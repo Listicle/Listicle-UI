@@ -12,7 +12,7 @@
 
   const { data } = query(graphql`
     query getProjects {
-      users {
+      user(id:12) {
         id
         username
         projectsCount
@@ -23,8 +23,8 @@
       }
     }
   `)
-  $: console.log($data.users[1].projects);
-	let projects = $data.users[1].projects;
+
+	let projects = $data.user.projects;
 </script>
 
 
