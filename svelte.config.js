@@ -25,12 +25,16 @@ export default {
   preprocess: [houdini()],
   kit: {
     vite: {
-        resolve: {
-            alias: {
-                $houdini: path.resolve('.', '$houdini')
-            }
-        }
-    }
+			resolve: {
+				alias: {
+					$houdini: path.resolve('.', '$houdini'),
+				},
+			},
+			server: {
+				fs: {
+					allow: ['..'],
+				}
+			}
+		}
   }
 }
-
