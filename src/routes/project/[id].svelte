@@ -3,8 +3,6 @@
   import { query, graphql } from '$houdini';
   import { page } from '$app/stores';
 
-  const { id } = $page.params;
-
   const { data } = query(graphql`
     query getAllProjects {
       user(id:12) {
