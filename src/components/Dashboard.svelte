@@ -68,7 +68,7 @@
           </a>
           <form>
             <button
-              class="text-transparent hover:text-black"
+              class="opacity-20 hover:opacity-100"
               on:click={() => deletePro({ id: parseInt(project.id) })}
             >🗑</button>
           </form>

@@ -1,19 +1,12 @@
 <script>
   import Card from "./Card.svelte";
   import { mutation, graphql, CreateActivity } from '$houdini';
-
   export let projectId;
   export let missions;
   export let state;
 
   let missionStatus;
   let missionTitle = '';
-
-  // const statuses = {
-  //   'future': FUTURE,
-  //   'current': CURRENT,
-  //   COMPLETED: 'completed'
-  // }
 
   $: filteredMissions = missions.filter(mission => mission.status === state);
 
@@ -62,7 +55,7 @@
   </div>
     {#each filteredMissions as mission (mission.id)}
       <div>
-        <Card {mission} tasks={mission.tasks} />
+        <Card {mission} />
       </div>
     {/each}
 </div>
