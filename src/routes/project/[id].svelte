@@ -30,10 +30,14 @@
     }
   `)
   
-  $: mission = $data.user.projects.find(project => parseInt(project.id) === parseInt(id));
+  $: mission = $data.user.projects.find(project => parseInt(project.id) === parseInt($page.params.id));
 
   const status = ['0', '1', '2'];
 </script>
+
+<svelte:head>
+  <title>Project View</title>
+</svelte:head>
 
 <div class="w-4/5 h-full min-h-screen">
   <h1 class="text-center text-6xl pt-6 font-semibold">{mission.projectName}</h1>

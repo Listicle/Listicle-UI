@@ -1,3 +1,6 @@
+<svelte:head>
+  <title>Home</title>
+</svelte:head>
 
 <main class="flex flex-col space-y-20 h-screen w-4/5 justify-center items-center font-semibold pb-20">
   <div class="w-4/5 flex flex-col justify-center items-center space-y-20 backdrop-contrast-200 rounded-md p-6 py-10" >

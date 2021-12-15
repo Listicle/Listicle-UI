@@ -1,15 +1,15 @@
 <script context="module">
-	import { setEnvironment } from '$houdini'
-	import environment from '../environment'
+	import { setEnvironment } from '$houdini';
+	import environment from '../environment';
 
-	setEnvironment(environment)
+	setEnvironment(environment);
 </script>
 
 <script>
 	import Dashboard from '../components/Dashboard.svelte';
 	import '../app.css';
-  import { query, graphql } from '$houdini'
-
+  import { query, graphql } from '$houdini';
+  
   const { data } = query(graphql`
     query getProjects {
       user(id:12) {

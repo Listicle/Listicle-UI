@@ -44,7 +44,9 @@
 </script>
 
 <div class="flex flex-col min-h-screen w-64 backdrop-grayscale">
-  <img src={listicleLogo} alt="listicle-logo" class="w-full p-4">
+  <a href="/">
+    <img src={listicleLogo} alt="listicle-logo" class="w-full p-4">
+  </a>
   <div>
     <div class="block">
       <h3 class="text-3xl py-2">Projects</h3>
