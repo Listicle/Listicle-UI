@@ -4,7 +4,7 @@ export type getProjects = {
 };
 
 export type getProjects$result = {
-    readonly users: ({
+    readonly user: {
         readonly id: string,
         readonly username: string | null,
         readonly projectsCount: number | null,
@@ -12,5 +12,5 @@ export type getProjects$result = {
             readonly id: string,
             readonly projectName: string | null
         })[] | null
-    })[]
+    }
 };

@@ -1,10 +1,10 @@
 export default {
     name: "getProjects",
     kind: "HoudiniQuery",
-    hash: "a41b41e306f68e59b9d7d58e13e6ca7c52a7c8e11a11466c5e6eec700edc0b81",
+    hash: "12a2ba2a0254a36f884020396fda3cb079cc3a88351dbe2313ddbf579ad09591",
 
     raw: `query getProjects {
-  users {
+  user(id: 12) {
     id
     username
     projectsCount
@@ -19,9 +19,9 @@ export default {
     rootType: "Query",
 
     selection: {
-        users: {
+        user: {
             type: "User",
-            keyRaw: "users",
+            keyRaw: "user(id: 12)",
 
             fields: {
                 id: {
