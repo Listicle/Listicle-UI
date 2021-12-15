@@ -1,11 +1,7 @@
 <script>
   import Column from '../../components/Column.svelte';
   import { query, graphql } from '$houdini';
-  import { onMount } from 'svelte';
   import { page } from '$app/stores';
-
-  const { id } = $page.params;
-  // $: idd = id
 
   const { data } = query(graphql`
     query getAllProjects {
@@ -31,12 +27,15 @@
       }
     }
   `)
-  $: console.log(id);
-  $: mission = $data.user.projects.find(project => parseInt(project.id) === parseInt(id));
-  $: console.log(mission);
+  
+  $: mission = $data.user.projects.find(project => parseInt(project.id) === parseInt($page.params.id));
 
   const status = ['0', '1', '2'];
 </script>
+
+<svelte:head>
+  <title>Project View</title>
+</svelte:head>
 
 <div class="w-4/5 h-full min-h-screen">
   <h1 class="text-center text-6xl pt-6 font-semibold">{mission.projectName}</h1>
