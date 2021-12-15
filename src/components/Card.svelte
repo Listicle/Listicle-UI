@@ -106,38 +106,54 @@
 
 <div class="bg-gray-300 h-auto p-2 my-2 rounded">
   <h3 class="capitalize text-center font-semibold">{mission.title}</h3>
-  <form class="w-auto" on:submit={() => createTask({ taskName: missionName, completed: false, activityId: parseInt(mission.id) })}>
-    <input class="w-full text-center border-solid border-transparent
-    focus:outline-none focus:shadow rounded"
-    type="text" placeholder="add a task" onfocus="this.placeholder=''"
-    onblur="this.placeholder='add a task'"
-    bind:value={missionName}>
+  <form
+    class="w-auto"
+    on:submit={() => createTask({ taskName: missionName, completed: false, activityId: parseInt(mission.id) })}
+  >
+    <input
+      class="w-full text-center border-solid border-transparent
+      focus:outline-none focus:shadow rounded"
+      type="text"
+      placeholder="add a task"
+      onfocus="this.placeholder=''"
+      onblur="this.placeholder='add a task'"
+      bind:value={missionName}
+    >
   </form>
   {#if mission.tasks.length}
     {#each mission.tasks as task (task.id)}
-    <div class="text-sm flex flex-row place-content-between p-1">
-      <div class="flex flex-row px-1 items-center">
-        <form>
-          <button class={task.completed ? `${buttonStyle} bg-black` : buttonStyle} on:click={() => updateTask({ completed: !task.completed, id: parseInt(task.id)})}></button>
-        </form>
-        <p class={task.completed && 'line-through'}>{task.taskName}</p>
+      <div class="text-sm flex flex-row place-content-between p-1">
+        <div class="flex flex-row px-1 items-center">
+          <form>
+            <button
+              class={task.completed ? `${buttonStyle} bg-black` : buttonStyle}
+              on:click={() => updateTask({ completed: !task.completed, id: parseInt(task.id)})}
+            ></button>
+          </form>
+          <p class={task.completed && 'line-through'}>{task.taskName}</p>
+        </div>
+        <div class="text-transparent hover:text-black">
+          <form on:submit={() => destroyTask({ id: parseInt(task.id), activityId: parseInt(mission.id) })}>
+            <button>🗑</button>
+          </form>
+        </div>
       </div>
-      <div class="text-transparent hover:text-black">
-        <form on:submit={() => destroyTask({ id: parseInt(task.id), activityId: parseInt(mission.id) })}>
-          <button>🗑</button>
-        </form>
-      </div>
-    </div>
     {/each}
   {/if}
     <div class="flex text-sm text-center pt-1 justify-around">
       <form>
         {#if mission.status === '1' || mission.status === '2'}
-          <button class="" on:click={() => updateAct({ activityStatus: previousStatus, activityId: mission.id })}>←</button>
+          <button
+            class=""
+            on:click={() => updateAct({ activityStatus: previousStatus, activityId: mission.id })}
+          >←</button>
         {/if}
         <button class="text-transparent hover:text-black" on:click={() => deleteAct({ activityId: parseInt(mission.id) })}>🗑</button>
         {#if mission.status === '0' || mission.status === '1'}
-          <button class="" on:click={() => updateAct({ activityStatus: newStatus, activityId: mission.id })}>→</button>
+          <button
+            class=""
+            on:click={() => updateAct({ activityStatus: newStatus, activityId: mission.id })}
+          >→</button>
         {/if}
       </form>
     </div>

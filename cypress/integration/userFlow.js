@@ -9,21 +9,14 @@ describe('User flow Listicle app (from dashboard view)', () => {
       .should('include.text', 'Welcome')
   })
 
-  it.skip('Should display the newest project board, if one exists', () => {
-    cy.get('#addNewProjectBtn')
-    .click()
-    cy.get('#addNewProjectInput')
-    .should('exist')
-  })
-
-  it('Should be able to create a new project board', () => {
+  it.skip('Should be able to create a new project board', () => {
     cy.get('form > .w-full')
       .type('eeee')
     cy.get(':nth-child(3) > a > p')
       .should('exist')
   })
 
-  it('Should be able to delete any displayed project board', () => {
+  it.skip('Should be able to delete any displayed project board', () => {
     cy.get('form > .w-full')
       .type('eeee')
     cy.get(':nth-child(3) > button')
