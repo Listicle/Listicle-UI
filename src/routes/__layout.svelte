@@ -23,7 +23,7 @@
       }
     }
   `)
-
+  $: console.log($data);
 	let projects = $data.user.projects;
 </script>
 

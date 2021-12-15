@@ -1,5 +1,5 @@
 <script>
-  import { fragment, mutation, graphql, CreateProject, DeleteProject } from '$houdini';
+  import { mutation, graphql, CreateProject, DeleteProject } from '$houdini';
   import listicleLogo from '../img/FullLogo_Transparent_NoBuffer.png';
 
   export let projects;

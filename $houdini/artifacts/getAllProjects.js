@@ -81,7 +81,7 @@ export default {
                                 },
 
                                 status: {
-                                    type: "Int",
+                                    type: "String",
                                     keyRaw: "status"
                                 },
 

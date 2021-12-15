@@ -31,18 +31,18 @@
       }
     }
   `)
+  $: console.log(id);
+  $: mission = $data.user.projects.find(project => parseInt(project.id) === parseInt(id));
+  $: console.log(mission);
 
-  $: project = $data.user.projects.find(project => project.id === id);
-  $: console.log(project);
-
-  const status = ['to_do', 'doing', 'done'];
+  const status = ['0', '1', '2'];
 </script>
 
-<div class="w-4/5 h-full min-h-screen ">
-  <h1 class="text-center text-6xl pt-6 font-semibold">{project.projectName}</h1>
+<div class="w-4/5 h-full min-h-screen">
+  <h1 class="text-center text-6xl pt-6 font-semibold">{mission.projectName}</h1>
   <div class="inner-div flex flex-row py-4 justify-center" >
-    {#each status as state (Math.random())}
-      <Column {state} missions={project.activities} />
+    {#each status as state}
+      <Column {state} missions={mission.activities} projectId={mission.id} />
     {/each}
   </div>
 </div>

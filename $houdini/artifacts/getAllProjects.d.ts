@@ -14,7 +14,7 @@ export type getAllProjects$result = {
             readonly activities: ({
                 readonly id: string,
                 readonly title: string | null,
-                readonly status: number | null,
+                readonly status: string,
                 readonly tasksCount: number | null,
                 readonly tasks: ({
                     readonly id: string,
