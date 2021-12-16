@@ -11,7 +11,7 @@
 		"cy:run": "cypress run",
 		"test": "start-server-and-test dev http://localhost:3000 cy:run",
 		"build-css": "tailwindcss build src/app.css -o output/client/_app/assets/start-464e9d0a.css",
-		"start": "node build/index.js"
+		"start": "run build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
