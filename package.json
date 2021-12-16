@@ -11,7 +11,7 @@
 		"cy:run": "cypress run",
 		"test": "start-server-and-test dev http://localhost:3000 cy:run",
 		"build-css": "tailwindcss build src/app.css -o output/client/_app/assets/start-464e9d0a.css",
-		"start": "node build/index.js"
+		"start": "run build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
@@ -34,7 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-node": "^1.0.0-next.55",
+		"@sveltejs/adapter-node": "^1.0.0-next.56",
 		"@sveltejs/adapter-static": "^1.0.0-next.21",
 		"houdini": "^0.12.1",
 		"houdini-preprocess": "^0.12.1",
