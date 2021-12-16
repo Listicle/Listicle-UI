@@ -29,10 +29,6 @@ Web application that allows the user to create project boards with 3 stages and 
 
 ## Install and Set Up
 
-You can see this application on the following link:
-
-[Listicle]()
-
 To run Cypress tests:
 
 1. Clone down the Readme repo
@@ -55,7 +51,9 @@ If you're interested on seeing the planning and execution of this project you ca
 - [Architecture Diagram](https://www.figma.com/file/v3BdfBM5zH3W7K2ZU5ep1N/Listicle-UI-Architecture?node-id=0%3A1)
 
 ## Illustrations
+![listicle](https://user-images.githubusercontent.com/81398850/146427176-14106d58-40f6-40f1-b432-f6b99affaeb1.gif)
 
+![Screen Shot 2021-12-15 at 8 27 35 PM](https://user-images.githubusercontent.com/81398850/146427216-a6c0c01a-ed7b-4f4c-b859-edbf6940f257.png)
 
 ## Wins
 
