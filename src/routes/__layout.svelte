@@ -27,7 +27,7 @@
 </script>
 
 
-<main class="flex flex-row h-screen w-screen max-w-screen-xl font-sans text-sky-900">
+<main class="flex flex-col items-center min-h-fit w-screen max-w-screen-xl font-sans text-sky-900 md:flex-row md:h-screen">
 	<Dashboard {projects} />
 	<slot />
 </main>

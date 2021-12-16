@@ -1,6 +1,7 @@
 <script>
   import { mutation, graphql, CreateProject, DeleteProject } from '$houdini';
   import listicleLogo from '../img/FullLogo_Transparent_NoBuffer.png';
+  import { goto } from '$app/navigation';
 
   export let projects;
 
@@ -43,14 +44,17 @@
   `);
 </script>
 
-<div class="flex flex-col min-h-screen w-64 backdrop-grayscale">
+<div class="flex flex-col md:min-h-screen w-64 pt-4">
   <a href="/">
-    <img src={listicleLogo} alt="listicle-logo" class="w-full p-4">
+    <img src={listicleLogo} alt="listicle-logo" class="w-full p-6">
   </a>
   <div>
     <div class="block">
       <h3 class="text-3xl py-2">Projects</h3>
-      <form on:submit={() => createPro({ projectName: projectN })}>
+      <form on:submit={() => {
+        createPro({ projectName: projectN });
+        goto('/');
+      }}>
         <input
           class="w-full text-center border-solid border-transparent
             focus:outline-none focus:shadow rounded"
@@ -69,10 +73,12 @@
             <p>{project.projectName}</p>
           </a>
           <form>
-            <button
-              class="opacity-20 hover:opacity-100"
-              on:click={() => deletePro({ id: parseInt(project.id) })}
-            >🗑</button>
+              <button
+                class="opacity-20 hover:opacity-100"
+                on:click={() => {
+                  deletePro({ id: parseInt(project.id) });
+                  goto('/');
+                }}>🗑</button>
           </form>
         </div>
       {/each}

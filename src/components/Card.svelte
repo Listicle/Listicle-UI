@@ -1,5 +1,6 @@
 <script>
   import { mutation, graphql, CreateTask, DestroyTask, UpdateTask, UpdateActivityStatus, DestroyActivity } from '$houdini';
+  import { fade, slide } from 'svelte/transition';
 
   export let mission;
 
@@ -101,7 +102,7 @@
   `)
 </script>
 
-<div class="bg-gray-300 h-auto p-2 my-2 rounded">
+<div class="bg-gray-300 h-auto p-2 my-2 rounded" in:slide out:slide|local >
   <h3 class="capitalize text-center font-semibold">{mission.title}</h3>
   <form
     class="w-auto"
@@ -119,7 +120,7 @@
   </form>
   {#if mission.tasks.length}
     {#each mission.tasks as task (task.id)}
-      <div class="text-sm flex flex-row place-content-between p-1">
+      <div class="text-sm flex flex-row place-content-between p-1 " in:fade|local >
         <div class="flex flex-row px-1 items-center">
           <form>
             <button

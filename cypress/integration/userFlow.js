@@ -5,7 +5,7 @@ describe('User flow Listicle app (from dashboard view)', () => {
   });
 
   it('Should greet the user with a welcome message', () => {
-    cy.get('.text-5xl')
+    cy.get('.text-2xl')
       .should('include.text', 'Welcome')
   })
 

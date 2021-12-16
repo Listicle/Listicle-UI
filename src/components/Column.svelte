@@ -1,6 +1,8 @@
 <script>
   import Card from "./Card.svelte";
   import { mutation, graphql, CreateActivity } from '$houdini';
+  import { scale } from 'svelte/transition';
+
   export let projectId;
   export let missions;
   export let state;
@@ -38,7 +40,7 @@
 
 </script>
 
-<div class="w-72 p-4 m-4 rounded" >
+<div class="w-72 p-4 m-4 rounded overflow-scroll" in:scale >
   <h1 class="text-center text-xl font-semibold">{missionStatus}</h1>
   <div class="flex flex-row justify-center">
     <form on:submit={() => createAct({ title: missionTitle, pId: projectId, status: state})}>
