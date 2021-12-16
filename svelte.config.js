@@ -1,12 +1,13 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-node';
+// import adapter from '@sveltejs/adapter-node';
 import path from 'path';
 import houdini from 'houdini-preprocess';
+import netlify from '@sveltejs/adapter-netlify';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({ out: 'my-output-directory' }),
+		adapter: netlify(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte'
